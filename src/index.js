@@ -16,7 +16,7 @@ import { getMainDefinition } from 'apollo-utilities';
 import { AUTH_TOKEN } from './constants';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000',
+  uri: 'https://hacker-news-graphql.herokuapp.com/',
 });
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem(AUTH_TOKEN);
@@ -29,7 +29,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000`,
+  uri: `ws://hacker-news-graphql.herokuapp.com/`,
   options: {
     reconnect: true,
     connectionParams: {
