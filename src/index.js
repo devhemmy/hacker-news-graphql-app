@@ -29,7 +29,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://hacker-news-graphql.herokuapp.com/`,
+  uri: `wss://hacker-news-graphql.herokuapp.com/`,
   options: {
     reconnect: true,
     connectionParams: {
